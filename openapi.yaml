@@ -6,9 +6,9 @@ info:
 
 servers:
   - url: https://api.nasa.gov
-    description: Stratus & KONG K8S
+    description: NASA API
 paths:
-  /insight_weather/:
+  /insight_weather:
     get:
       summary: Mars Weather
       parameters:
