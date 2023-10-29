@@ -37,4 +37,4 @@ paths:
         '200':
           description: Successful response
           content:
-            application/xml: {}
+            application/json: {}
