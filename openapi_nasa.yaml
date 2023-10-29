@@ -8,7 +8,7 @@ servers:
   - url: https://api.nasa.gov
     description: Nasa Api
 paths:
-  /insight_weather:
+  /insight_weather/:
     get:
       summary: Mars Weather
       parameters:
