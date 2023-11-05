@@ -2,7 +2,7 @@ openapi: '3.0.0'
 info:
   version: '1.0.0'
   title: 'Sample API'
-  description: Weather on Mars
+  description: NASA APIs
 
 servers:
   - url: https://api.nasa.gov
@@ -10,7 +10,7 @@ servers:
 paths:
   /insight_weather/:
     get:
-      summary: Mars Weather
+      summary: Mars Weather Service
       parameters:
         - name: api_key
           description: The unique api key
@@ -33,6 +33,59 @@ paths:
           schema:
             type: string
           example: '1.0'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mars-photos/api/v1/rovers/curiosity/photos:
+    get:
+      summary: Images gathered by NASA's Curiosity rover
+      parameters:
+        - name: api_key
+          description: The unique api key
+          in: query
+          required: true
+          schema:
+            type: string
+          example: 'IxpTyqs8LnclBrUq88cIdf99zftbzPgHYbmEzb1V'
+        - name: earth_date
+          description: earth date
+          in: query
+          required: true
+          schema:
+            type: string
+          example: 2015-6-3
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /neo/rest/v1/feed:
+     get:
+      summary: Retrieve a list of Asteroids based on their closest approach date to Earth.
+      parameters:
+        - name: api_key
+          description: The unique api key
+          in: query
+          required: true
+          schema:
+            type: string
+          example: 'IxpTyqs8LnclBrUq88cIdf99zftbzPgHYbmEzb1V'
+        - name: start_date
+          description: start date
+          in: query
+          required: true
+          schema:
+            type: string
+          example: 2015-9-7
+        - name: end_date
+          description: end date
+          in: query
+          required: true
+          schema:
+            type: string
+          example: 2015-9-8
       responses:
         '200':
           description: Successful response
